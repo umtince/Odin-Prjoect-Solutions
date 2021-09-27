@@ -3,11 +3,35 @@ img{
     height: auto;
 }
 
+p{
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 body{
     font-family: 'Roboto Mono', monospace;
+    text-align: center;
+    padding: 20px;
 }
 
 h1,
 h2{
     font-weight: bold;
+}
+
+ul{
+    width: 250px;
+    margin: auto;
+}
+
+ol{
+    width: 450px;
+    margin: auto;
+    padding-bottom: 45px;
+}
+
+li{
+    text-align: start;
+    padding: 10px;
 }
