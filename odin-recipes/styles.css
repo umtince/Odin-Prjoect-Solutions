@@ -1,0 +1,33 @@
+body{
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    font-weight: bold;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul{
+    list-style: none;
+    padding-left: 0px;
+    margin-bottom: 100px;
+}
+
+li{
+    padding: 10px;
+}
+
+#return{
+    text-align: center;
+    padding-top: 45px;
+}
+html{
+    height: 100%;
+}
