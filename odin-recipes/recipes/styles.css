@@ -1,0 +1,13 @@
+img{
+    width: 400px;
+    height: auto;
+}
+
+body{
+    font-family: 'Roboto Mono', monospace;
+}
+
+h1,
+h2{
+    font-weight: bold;
+}
