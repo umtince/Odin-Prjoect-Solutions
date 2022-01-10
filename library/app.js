@@ -4,6 +4,8 @@ const authorInput = document.querySelector("#author-input");
 const pageNumberInput = document.querySelector("#page-number-input");
 const isReadInput = document.querySelector("#is-read-input");
 const form = document.querySelector(".input");
+const newBookBtn = document.querySelector("#new-book-button");
+const toggleFormDiv = document.querySelector("#toggle-form-div");
 
 let myLibrary = [];
 
@@ -13,6 +15,18 @@ function Book(name, author, pageNumber, isRead){
     this.pageNumber = pageNumber;
     this.isRead = isRead;
 }
+
+
+
+document.addEventListener("click",(event)=>{
+    
+    if(event.target === newBookBtn){
+        toggleFormDiv.style.visibility = "visible";
+    }
+    else if(event.target !== toggleFormDiv){
+        toggleFormDiv.style.visibility = "hidden";
+    }
+});
 
 
 form.onsubmit = function(e){
