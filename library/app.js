@@ -42,9 +42,9 @@ form.onsubmit = function(e){
     e.preventDefault();
     
     addBookToLibrary();
-    console.log(myLibrary);
     displayMyLibraryOnPage();
     hideAddBookDiv();
+    clearInputFields();
 }
 
 
@@ -68,32 +68,50 @@ function isExistsInLibrary(book){
 }
 
 function displayMyLibraryOnPage(){
-    let bookCard = document.createElement("div");
-    bookCard.setAttribute("class","card");
-    let bookCardUnorderedList = document.createElement("ul");
 
-    for(let prop in myLibrary[myLibrary.length-1])
+    bookCardsDiv.innerHTML = ""; //clears the div after new book is submitted in form element
+
+    for(let bookObj of myLibrary)
     {
-        let li = document.createElement("li");
-        li.textContent = myLibrary[myLibrary.length-1][prop];
-        bookCardUnorderedList.appendChild(li);
+        let bookCard = document.createElement("div");
+        bookCard.setAttribute("class","card");
+
+        let bookCardUnorderedList = document.createElement("ul");
+
+        for(let prop in bookObj)
+        {
+            let li = document.createElement("li");
+            li.textContent = bookObj[prop];
+            bookCardUnorderedList.appendChild(li);
+        }
+        
+        let deleteBookButton = document.createElement("button");
+        deleteBookButton.textContent = "Delete Book";
+        deleteBookButton.setAttribute("type","button");
+        deleteBookButton.setAttribute("class","delete-book-button");
+        deleteBookButton.addEventListener("click",()=>{
+            let pos = myLibrary.findIndex((x)=>{
+                return JSON.stringify(x) === JSON.stringify(bookObj);
+            });
+
+            bookCard.remove();
+            myLibrary.splice(pos,1);
+        });
+    
+        /**
+         * TOGGLE ISREAD BUTTON
+         * 
+        */
+    
+        bookCard.appendChild(bookCardUnorderedList);
+        bookCard.appendChild(deleteBookButton);
+        bookCardsDiv.appendChild(bookCard);
     }
+}
 
-    let deleteBookButton = document.createElement("button");
-    deleteBookButton.textContent = "Delete Book";
-    deleteBookButton.setAttribute("type","button");
-    deleteBookButton.setAttribute("class","delete-book-button");
-    deleteBookButton.addEventListener("click",()=>{
-        //do smth
-        console.log("cliks")
-    });
-
-    /**
-     * TOGGLE ISREAD BUTTON
-     * 
-    */
-
-    bookCard.appendChild(bookCardUnorderedList);
-    bookCard.appendChild(deleteBookButton);
-    bookCardsDiv.appendChild(bookCard);
+function clearInputFields(){
+    titleInput.value="";
+    authorInput.value="";
+    pageNumberInput.value="";
+    isReadInput.checked = false;
 }
