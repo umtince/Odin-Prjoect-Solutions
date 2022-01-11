@@ -9,7 +9,8 @@
     <body>
         <button id="new-book-button" type="button">New Book</button>
         <div id="toggle-form-div">
-            <form class="input" autocomplete="off">
+            <div id="form-container">
+                <form class="input" autocomplete="off">
                     <input id="title-input" type="text" placeholder="Title" required>
                     <input id="author-input" type="text" placeholder="Author" required>
                     <input id="page-number-input" type="number" placeholder="Page Number" min="1" required>
@@ -18,7 +19,11 @@
                         <input id="is-read-input" type="checkbox">
                     </label>
                     <button id="add-book-button" type="submit">Add Book</button>
-            </form>
+                </form>
+            </div>    
+        </div>
+        <div id="book-cards-div">
+            
         </div>
     </body>
 </html>
