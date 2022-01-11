@@ -17,6 +17,14 @@ function Book(name, author, pageNumber, isRead){
     this.isRead = isRead;
 }
 
+Book.prototype.getIsRead = function(){
+    return this.isRead;
+}
+
+Book.prototype.setIsRead = function(newIsRead){
+    this.isRead = newIsRead;
+}
+
 function hideAddBookDiv(){
     toggleFormDiv.style.visibility = "hidden";
     newBookBtn.style.visibility = "visible";
@@ -80,9 +88,12 @@ function displayMyLibraryOnPage(){
 
         for(let prop in bookObj)
         {
-            let li = document.createElement("li");
-            li.textContent = bookObj[prop];
-            bookCardUnorderedList.appendChild(li);
+            if(Object.prototype.hasOwnProperty.call(bookObj,prop) && prop !== "isRead") //to avoid prototype functions of objects ending up in list
+            {
+                let li = document.createElement("li");
+                li.textContent = bookObj[prop];
+                bookCardUnorderedList.appendChild(li);
+            }
         }
         
         let deleteBookButton = document.createElement("button");
@@ -98,12 +109,18 @@ function displayMyLibraryOnPage(){
             myLibrary.splice(pos,1);
         });
     
-        /**
-         * TOGGLE ISREAD BUTTON
-         * 
-        */
-    
+        let toggleIsReadButton = document.createElement("button");
+        toggleIsReadButton.textContent = bookObj.getIsRead();
+        toggleIsReadButton.setAttribute("type","button");
+        toggleIsReadButton.setAttribute("class","toggle-is-read-button");
+        toggleIsReadButton.addEventListener("click",()=>{
+            bookObj.setIsRead(!bookObj.getIsRead());
+            toggleIsReadButton.textContent = bookObj.getIsRead();
+            console.log(myLibrary);
+        });
+
         bookCard.appendChild(bookCardUnorderedList);
+        bookCard.appendChild(toggleIsReadButton);
         bookCard.appendChild(deleteBookButton);
         bookCardsDiv.appendChild(bookCard);
     }
