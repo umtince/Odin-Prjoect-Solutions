@@ -110,13 +110,12 @@ function displayMyLibraryOnPage(){
         });
     
         let toggleIsReadButton = document.createElement("button");
-        toggleIsReadButton.textContent = bookObj.getIsRead();
+        toggleIsReadButton.textContent = isReadToString(bookObj);
         toggleIsReadButton.setAttribute("type","button");
         toggleIsReadButton.setAttribute("class","toggle-is-read-button");
         toggleIsReadButton.addEventListener("click",()=>{
             bookObj.setIsRead(!bookObj.getIsRead());
-            toggleIsReadButton.textContent = bookObj.getIsRead();
-            console.log(myLibrary);
+            toggleIsReadButton.textContent = isReadToString(bookObj);
         });
 
         bookCard.appendChild(bookCardUnorderedList);
@@ -131,4 +130,8 @@ function clearInputFields(){
     authorInput.value="";
     pageNumberInput.value="";
     isReadInput.checked = false;
+}
+
+function isReadToString(obj){
+    return (obj.getIsRead()) ? "Read" : "Not read";
 }
