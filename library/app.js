@@ -111,11 +111,13 @@ function displayMyLibraryOnPage(){
     
         let toggleIsReadButton = document.createElement("button");
         toggleIsReadButton.textContent = isReadToString(bookObj);
+        changeIsReadButtonColor(toggleIsReadButton,bookObj.getIsRead());
         toggleIsReadButton.setAttribute("type","button");
         toggleIsReadButton.setAttribute("class","toggle-is-read-button");
         toggleIsReadButton.addEventListener("click",()=>{
             bookObj.setIsRead(!bookObj.getIsRead());
             toggleIsReadButton.textContent = isReadToString(bookObj);
+            changeIsReadButtonColor(toggleIsReadButton,bookObj.getIsRead());
         });
 
         bookCard.appendChild(bookCardUnorderedList);
@@ -134,4 +136,15 @@ function clearInputFields(){
 
 function isReadToString(obj){
     return (obj.getIsRead()) ? "Read" : "Not read";
+}
+
+function changeIsReadButtonColor(referenceToButton,isReadStatus){
+    if(isReadStatus)
+    {
+        referenceToButton.style.backgroundColor = "#0E9F6E";
+    }
+    else
+    {
+        referenceToButton.style.backgroundColor = "#E01E37";
+    }
 }
