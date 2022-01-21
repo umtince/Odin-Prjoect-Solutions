@@ -90,7 +90,7 @@ function displayMyLibraryOnPage(){
 
         for(let prop in bookObj)
         {
-            if(Object.prototype.hasOwnProperty.call(bookObj,prop) && prop !== "isRead") //to avoid prototype functions of objects ending up in list
+            if(Object.prototype.hasOwnProperty.call(bookObj,prop) && prop !== "isRead") //to avoid prototype functions of objects ending up in list 
             {
                 let li = document.createElement("li");
                 li.textContent = bookObj[prop];
