@@ -10,19 +10,21 @@ const bookCardsDiv = document.querySelector("#book-cards-div");
 
 let myLibrary = [];
 
-function Book(name, author, pageNumber, isRead){
-    this.name = name;
-    this.author = author;
-    this.pageNumber = pageNumber;
-    this.isRead = isRead;
-}
+class Book{
+    constructor(name, author, pageNumber, isRead){
+        this.name = name;
+        this.author = author;
+        this.pageNumber = pageNumber;
+        this.isRead = isRead;
+    }
 
-Book.prototype.getIsRead = function(){
-    return this.isRead;
-}
+    get IsRead(){
+        return this.isRead;
+    }
 
-Book.prototype.setIsRead = function(newIsRead){
-    this.isRead = newIsRead;
+    set IsRead(newIsRead){
+        this.isRead = newIsRead;
+    }
 }
 
 function hideAddBookDiv(){
@@ -111,13 +113,13 @@ function displayMyLibraryOnPage(){
     
         let toggleIsReadButton = document.createElement("button");
         toggleIsReadButton.textContent = isReadToString(bookObj);
-        changeIsReadButtonColor(toggleIsReadButton,bookObj.getIsRead());
+        changeIsReadButtonColor(toggleIsReadButton,bookObj.IsRead);
         toggleIsReadButton.setAttribute("type","button");
         toggleIsReadButton.setAttribute("class","toggle-is-read-button");
         toggleIsReadButton.addEventListener("click",()=>{
-            bookObj.setIsRead(!bookObj.getIsRead());
+            bookObj.IsRead = (!bookObj.IsRead);
             toggleIsReadButton.textContent = isReadToString(bookObj);
-            changeIsReadButtonColor(toggleIsReadButton,bookObj.getIsRead());
+            changeIsReadButtonColor(toggleIsReadButton,bookObj.IsRead);
         });
 
         bookCard.appendChild(bookCardUnorderedList);
@@ -135,7 +137,7 @@ function clearInputFields(){
 }
 
 function isReadToString(obj){
-    return (obj.getIsRead()) ? "Read" : "Not read";
+    return (obj.IsRead) ? "Read" : "Not read";
 }
 
 function changeIsReadButtonColor(referenceToButton,isReadStatus){
