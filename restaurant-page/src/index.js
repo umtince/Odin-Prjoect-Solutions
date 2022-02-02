@@ -1,1 +1,3 @@
-console.log("test");
+import createHomePage from './homepage.js';
+
+createHomePage();
