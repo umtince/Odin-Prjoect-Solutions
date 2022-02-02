@@ -1,0 +1,65 @@
+@font-face {
+    font-family: "myFont";
+    src: url("./images/medio.otf");
+}
+
+/*body{
+    overflow:scroll;
+}*/
+
+#motto-container{
+    position: absolute;
+    width: 100px;
+    height: auto;
+    right: 35%;
+    top: 30%;
+    font-family: 'myFont';
+}
+
+#motto{
+    position: absolute;
+    color:chocolate;
+    font-size: 60px;
+}
+
+#header{
+    font-family: 'myFont';
+    display: flex;
+    position: fixed;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    color: #DAA520;
+}
+
+h1{
+    font-size: 40px;
+}
+
+#nav{
+    width: 40%;
+}
+
+#nav>ul{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 30px;
+    row-gap: 10%;
+    list-style: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    color: #DAA520;
+}
+
+#img-container{
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    width: 100vw;
+    height: 100vh;
+}
