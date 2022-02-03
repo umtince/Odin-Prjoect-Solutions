@@ -6,6 +6,7 @@
 #header{
     width: 100%;
     position: fixed;
+    font-family: 'myFont';
 }
 
 #nav{
@@ -18,14 +19,14 @@
 
 h1{
     flex-grow: 2;
-    font-size: 40px;
-    padding-left: 2%;
+    font-size: 50px;
+    padding-left: 5%;
 }
 
 #nav>ul{
     display: flex;
     justify-content: space-evenly;
-    font-size: 30px;
+    font-size: 40px;
     row-gap: 10%;
     list-style: none;
     cursor: pointer;
