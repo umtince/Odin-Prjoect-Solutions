@@ -1,11 +1,14 @@
-import createHomePage from './homepage.js';
-import createContactUsPage from './contactus.js';
-import createMenuPage from './menu.js';
 import './style.css';
+import './contactus.css';
+import './menu.css';
 
 window.onload = function(){
     loadCleanPage.execute();
-    createHomePage();
+    
+    import('./homepage.js')
+        .then(module =>{
+            module.default();
+        })
 }
 
 const divContent = document.getElementById('content');
@@ -15,17 +18,29 @@ const changePage = (function(){
 
     function loadHomePage(){
         loadCleanPage.execute();
-        createHomePage();
+
+        import('./homepage.js')
+        .then(module =>{
+            module.default();
+        })
     }
 
     function loadMenuPage(){
         loadCleanPage.execute();
-        createMenuPage();
+        
+        import('./menu.js')
+        .then(module =>{
+            module.default();
+        })
     }
 
     function loadContactUsPage(){
         loadCleanPage.execute();
-        createContactUsPage();
+        
+        import('./contactus.js')
+        .then(module =>{
+            module.default();
+        })
     }
 
     return [loadHomePage,loadMenuPage,loadContactUsPage];

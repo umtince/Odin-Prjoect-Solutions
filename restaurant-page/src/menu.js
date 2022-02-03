@@ -1,5 +1,4 @@
 import myMenu from './images/menu3.png';
-import './menu.css';
 
 const divContent = document.getElementById('content');
 

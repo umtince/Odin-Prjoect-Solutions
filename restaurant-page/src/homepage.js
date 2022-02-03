@@ -1,4 +1,3 @@
-import './style.css'
 import bgImg from './images/nagendra-ts-fLUD9E7-l20-unsplash5.jpg'
 
 const divContent = document.getElementById('content');

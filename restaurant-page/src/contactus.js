@@ -1,5 +1,4 @@
 import contactImg from './images/sebastian-coman-photography-eBmyH7oO5wY-unsplash2.jpg';
-import './contactus.css';
 
 const divContent = document.getElementById('content');
 
