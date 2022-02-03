@@ -1,5 +1,6 @@
 import createHomePage from './homepage.js';
 import createContactUsPage from './contactus.js';
+import createMenuPage from './menu.js';
 import './style.css';
 
 window.onload = function(){
@@ -18,7 +19,8 @@ const changePage = (function(){
     }
 
     function loadMenuPage(){
-        console.log("menupage!");
+        loadCleanPage.execute();
+        createMenuPage();
     }
 
     function loadContactUsPage(){
