@@ -3,11 +3,15 @@
     src: url("./images/medio.otf");
 }
 
+body{
+    overflow:hidden;
+}
+
 #header{
     width: 100%;
     position: fixed;
     font-family: 'myFont';
-    background-color: beige;
+    background-color: #FFFDF3;
 }
 
 #nav{
@@ -15,7 +19,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    color: #DAA520;
+    color: #88794F;
 }
 
 h1{
@@ -62,6 +66,6 @@ img {
 
 #motto{
     position: absolute;
-    color:chocolate;
+    color:#88794F;
     font-size: 60px;
 }
