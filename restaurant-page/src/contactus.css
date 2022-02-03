@@ -1,0 +1,47 @@
+@font-face {
+    font-family: "myFont";
+    src: url("./images/medio.otf");
+}
+
+#contact-img{
+    width: 60vw;
+    height: 100vh;
+}
+
+#content{
+    background-color: beige;
+    display: flex;
+    font-family: 'myFont';
+    color:chocolate;
+}
+
+#contact-info{
+    position: absolute;
+    width: 300px;
+    height: auto;
+    right: 10%;
+    top: 35%;
+    font-family: 'myFont';
+}
+
+#location{
+    margin-bottom: 25%;
+    text-align: center;
+}
+
+#telephone{
+    text-align: center;
+}
+
+.contact-h2{
+    font-size: 40px;
+}
+
+.contact-h3{
+    font-size: 35px;
+}
+
+.contact-h2, .contact-h3{
+    margin-bottom: 3%;
+    margin-top: 0;
+}

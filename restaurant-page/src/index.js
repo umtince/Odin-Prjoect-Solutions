@@ -1,4 +1,5 @@
 import createHomePage from './homepage.js';
+import createContactUsPage from './contactus.js';
 import './style.css';
 
 window.onload = function(){
@@ -21,7 +22,8 @@ const changePage = (function(){
     }
 
     function loadContactUsPage(){
-        console.log("contactus!");
+        loadCleanPage.execute();
+        createContactUsPage();
     }
 
     return [loadHomePage,loadMenuPage,loadContactUsPage];
