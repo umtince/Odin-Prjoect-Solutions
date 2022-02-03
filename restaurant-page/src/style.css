@@ -69,3 +69,13 @@ img {
     color:#88794F;
     font-size: 60px;
 }
+
+#github-img{
+    height: 100%;
+    width: 100%;
+}
+
+a{
+    width: 32px;
+    height: 32px;
+}

@@ -1,6 +1,7 @@
 import './style.css';
 import './contactus.css';
 import './menu.css';
+import ghImg from './images/GitHub-Mark-32px.png';
 
 window.onload = function(){
     loadCleanPage.execute();
@@ -69,6 +70,14 @@ const loadCleanPage = (function(){
             ul.appendChild(li);
         }
     
+        const githubImg = new Image();
+        githubImg.src = ghImg;
+        githubImg.setAttribute('id','github-img');
+        const anchor = document.createElement('a');
+        anchor.href = "https://github.com/umtince/Odin-Project-Solutions/tree/main/restaurant-page";
+        anchor.appendChild(githubImg);
+        ul.appendChild(anchor);
+
         nav.appendChild(h1);
         nav.appendChild(ul);
     
